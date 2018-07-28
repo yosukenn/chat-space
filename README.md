@@ -8,12 +8,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|
 |name|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|created_at|datetime|
-|updated_at|datetime|
 
 ### Association
 - has_many :groups,through: members
@@ -35,10 +32,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|
 |name|string|null: false|
-|created_at|datetime|
-|updated_at|datetime|
 
 ### Association
 - has_many :users, through: members
@@ -49,12 +43,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|
 |body|text|null: false|
 |image|blob|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|created_at|datetime|
 
 ### Association
 - belongs_to :users
