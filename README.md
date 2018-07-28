@@ -42,3 +42,18 @@
 ### Association
 - has_many :members
 - has_many :messages
+
+## messages table
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|
+|body|text|null: false|
+|image|blob|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|created_at|datetime|
+
+### Association
+- belongs_to :users
+- belongs_to :groups
