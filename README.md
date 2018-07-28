@@ -11,6 +11,7 @@
 |name|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
+- devise導入のこと
 
 ### Association
 - has_many :groups,through: members
