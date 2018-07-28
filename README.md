@@ -29,3 +29,16 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## groups table
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|
+|name|string|null: false|
+|created_at|datetime|
+|updated_at|datetime|
+
+### Association
+- has_many :members
+- has_many :messages
