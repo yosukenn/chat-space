@@ -1,6 +1,16 @@
 @import "./reset";
 @import "./variable";
 
+.notice {
+  position: fixed;
+  width: 100vw;
+  background-color: $blue-color;
+  &__sentense {
+    text-align: center;
+    color: #fff;
+  }
+}
+
 .left-content {
   float: left;
   width: 300px;
