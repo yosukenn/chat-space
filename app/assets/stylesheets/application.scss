@@ -13,14 +13,16 @@
 
 .left-content {
   float: left;
-  width: 300px;
+  width: 260px;
   height: 100vh;
   background-color: #2f3e51;
+  padding: 24px + 28px 20px 0;
 }
 
 .right-content {
   float: right;
-  width: calc(100vw - 300px);
+  width: calc(100vw - 300px - 80px);
   height: 100vh;
   background-color: #f0f0f0;
+  padding: 24px + 28px 40px 0;
 }
