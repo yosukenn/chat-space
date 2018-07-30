@@ -14,8 +14,10 @@
         %div{class: "left-content"}
           %div{class: "my-account"}
             %p{class: "my-account__name"} yosukenn
-            %a{class: "my-account__create", href: '/'} img
-            %a{class: "my-account__edit", href: '/'} img
+            = link_to root_path, method: :get,class: "my-account__create" do
+              = fa_icon("edit")
+            = link_to root_path, method: :get,class: "my-account__edit" do
+              = fa_icon("cog")
           %div{class: "group"}
             %p{class: "group__name"} group1
             %p{class: "group__message"} こんにちは

@@ -40,14 +40,18 @@
     font-weight: bold;
     float: left;
     line-height: 90px;
+    padding-right: 130px;
   }
   &__create {
-    float: right;
+    float: left;
     line-height: 90px;
+    color: $white;
+    padding-right: 10px;
   }
   &__edit {
-    float: right;
+    float: left;
     line-height: 90px;
+    color: $white;
   }
 }
 
