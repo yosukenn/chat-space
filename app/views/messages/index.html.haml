@@ -41,6 +41,7 @@
           %form{class: "message-send"}
             %input{class: "message-send__text", type: "text", placeholder: "Type a message"}
             %label
-              = fa_icon("image")
+              %div{class: "message-send__img-icon"}
+                = fa_icon("image")
               %input{class: "message-send__image", type: "file"}
             %input{class: "message-send__btn", type: "submit", value: "Send"}
