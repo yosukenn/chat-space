@@ -1,2 +1,16 @@
 @import "./reset";
 @import "./variable";
+
+.left-content {
+  float: left;
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+}
+
+.right-content {
+  float: right;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  background-color: #f0f0f0;
+}
