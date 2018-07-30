@@ -132,12 +132,14 @@
     line-height: 50px;
     padding-left: 10px;
     width: 800px;
+    border: 0;
   }
   &__image {
     padding-right: 10px;
     height: 50px;
     width: 30px;
     line-height: 50px;
+    background-color: $white;
   }
   &__btn {
     margin-left: 50px;
