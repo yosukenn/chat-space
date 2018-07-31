@@ -124,35 +124,43 @@
 }
 
 .message-send {
+  padding: 20px 40px;
   width: calc(100vw - 300px - 80px);
   height: 50px;
-  position: absolute;
   bottom: 0;
   right: 0;
-  padding: 20px 40px;
   background-color: #D4D4D4;
-  &__text {
-    color: $black;
-    font-size: 16px;
-    line-height: 50px;
-    padding: 0 10px;
-    width: 800px;
-    border: 0;
+  position: absolute;
+  &__content {
     position: relative;
-  }
-  &__img-icon {
-    position: absolute;
-    bottom: 33px;
-    right: 165px;
-  }
-  &__image {
-    display: none;
-  }
-  &__btn {
-    margin-left: 15px;
-    background-color: $blue;
-    width: 90px;
-    height: 50px;
-    color: $white;
+    &__text {
+      color: $black;
+      font-size: 16px;
+      line-height: 50px;
+      padding: 0 10px;
+      width: calc(100vw - 300px - 80px - 130px);
+      border: 0;
+      margin-right: 15px;
+    }
+    &__img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 170px;
+    }
+    &__img-icon {
+      float: left;
+      padding-top: 12px;
+    }
+    &__image {
+      display: none;
+    }
+    &__btn {
+      background-color: $blue;
+      width: 90px;
+      height: 50px;
+      color: $white;
+      float: right;
+    }
   }
 }
