@@ -1,0 +1,19 @@
+.wrapper
+  .notice
+    %p.notice__sentense チャットグループが作成されました。
+  .contents
+    .side-bar
+      .side-bar__my-account
+        %p.side-bar__my-account__name yosukenn
+        = link_to "#", method: :get, class: "side-bar__my-account__create" do
+          = fa_icon("edit")
+        = link_to "#", method: :get, class: "side-bar__my-account__edit" do
+          = fa_icon("cog")
+      = render partial: "group"
+    .content
+      .content__current-group
+        %p.content__current-group__name group1
+        %p.content__current-group__members Member : yosukenn, yasuda
+        %a.content__current-group__edit{href: '#'}Edit
+      = render partial: "message"
+      = render partial: "form"
