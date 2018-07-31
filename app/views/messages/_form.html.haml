@@ -1,0 +1,9 @@
+%form{class: "content__message-send"}
+  .content__message-send__content
+    %input{class: "content__message-send__content__text", type: "text", placeholder: "Type a message"}
+    .content__message-send__content__img
+      %label
+        .content__message-send__content__img-icon
+          = fa_icon("image")
+        %input{class: "content__message-send__content__image", type: "file"}
+      %input{class: "content__message-send__content__btn", type: "submit", value: "Send"}
