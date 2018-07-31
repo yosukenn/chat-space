@@ -2,12 +2,12 @@
   %div{class: "notice"}
     %p{class: "notice__sentense"}チャットグループが作成されました。
   %div{class: "contents"}
-    %div{class: "left-content"}
-      %div{class: "my-account"}
-        %p{class: "my-account__name"} yosukenn
-        = link_to root_path, method: :get,class: "my-account__create" do
+    %div{class: "side-bar"}
+      %div{class: "side-bar__my-account"}
+        %p{class: "side-bar__my-account__name"} yosukenn
+        = link_to root_path, method: :get,class: "side-bar__my-account__create" do
           = fa_icon("edit")
-        = link_to root_path, method: :get,class: "my-account__edit" do
+        = link_to root_path, method: :get,class: "side-bar__my-account__edit" do
           = fa_icon("cog")
       = render partial: "group"
     %div{class: "right-content"}

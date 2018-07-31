@@ -1,46 +1,44 @@
-.left-content {
+.side-bar {
   float: left;
   width: 300px;
   height: 100vh;
   background-color: #2f3e51;
-}
+  &__my-account {
+    background-color: #253141;
+    width: 260px;
+    height: 95px;
+    padding: 28px 20px 0;
+    &__name {
+      color: $white;
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+      line-height: 90px;
+      padding-right: 130px;
+    }
+    &__create {
+      float: left;
+      line-height: 90px;
+      color: $white;
+      padding-right: 10px;
+    }
+    &__edit {
+      float: left;
+      line-height: 90px;
+      color: $white;
+    }
+  }
 
-
-.my-account {
-  background-color: #253141;
-  width: 260px;
-  height: 95px;
-  padding: 28px 20px 0;
-  &__name {
-    color: $white;
-    font-size: 16px;
-    font-weight: bold;
-    float: left;
-    line-height: 90px;
-    padding-right: 130px;
-  }
-  &__create {
-    float: left;
-    line-height: 90px;
-    color: $white;
-    padding-right: 10px;
-  }
-  &__edit {
-    float: left;
-    line-height: 90px;
-    color: $white;
-  }
-}
-
-.group {
-  padding: 20px 20px 40px;
-  &__name {
-    font-size: 15px;
-    color: $white;
-    padding-bottom: 5px;
-  }
-  &__message {
-    font-size: 11px;
-    color: $white;
+  &__group {
+    padding: 20px 20px 40px;
+    &__name {
+      font-size: 15px;
+      color: $white;
+      padding-bottom: 5px;
+    }
+    &__message {
+      font-size: 11px;
+      color: $white;
+    }
   }
 }
