@@ -5,9 +5,9 @@
     .side-bar
       .side-bar__my-account
         %p.side-bar__my-account__name yosukenn
-        = link_to "#", method: :get,class: "side-bar__my-account__create" do
+        = link_to "#", method: :get, class: "side-bar__my-account__create" do
           = fa_icon("edit")
-        = link_to "#", method: :get,class: "side-bar__my-account__edit" do
+        = link_to "#", method: :get, class: "side-bar__my-account__edit" do
           = fa_icon("cog")
       = render partial: "group"
     .content
