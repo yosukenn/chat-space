@@ -1,10 +1,10 @@
 .wrapper
   .notice
-    %p{class: "notice__sentense"}チャットグループが作成されました。
+    %p.notice__sentense チャットグループが作成されました。
   .contents
     .side-bar
       .side-bar__my-account
-        %p{class: "side-bar__my-account__name"} yosukenn
+        %p.side-bar__my-account__name yosukenn
         = link_to "#", method: :get,class: "side-bar__my-account__create" do
           = fa_icon("edit")
         = link_to "#", method: :get,class: "side-bar__my-account__edit" do
@@ -12,9 +12,9 @@
       = render partial: "group"
     .content
       .content__current-group
-        %p{class: "content__current-group__name"} group1
-        %p{class: "content__current-group__members"} Member : yosukenn, yasuda
-        %a{class: "content__current-group__edit", href: '#'}Edit
+        %p.content__current-group__name group1
+        %p.content__current-group__members Member : yosukenn, yasuda
+        %a.content__current-group__edit{href: '#'}Edit
       = render partial: "message"
       %form{class: "content__message-send"}
         .content__message-send__content
