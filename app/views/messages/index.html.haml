@@ -18,25 +18,13 @@
               = fa_icon("edit")
             = link_to root_path, method: :get,class: "my-account__edit" do
               = fa_icon("cog")
-          %div{class: "group"}
-            %p{class: "group__name"} group1
-            %p{class: "group__message"} こんにちは
-          %div{class: "group"}
-            %p{class: "group__name"} group2
-            %p{class: "group__message"} こんばんは
+          = render partial: "group"
         %div{class: "right-content"}
           %div{class: "current-group"}
             %p{class: "current-group__name"} group1
             %p{class: "current-group__members"} Member : yosukenn, yasuda
             %a{class: "current-group__edit", href: '/'}Edit
-          %div{class: "message"}
-            %p{class: "message__name"} yosukenn
-            %p{class: "message__date"}  2018/07/27 07:56
-            %p{class: "message__text"}  久しぶり
-          %div{class: "message"}
-            %p{class: "message__name"}  yasuda
-            %p{class: "message__date"}  2018/07/27 09:67
-            %p{class: "message__text"}  元気
+          = render partial: "message"
           %form{class: "message-send"}
             %div{class: "message-send__content"}
               %input{class: "message-send__content__text", type: "text", placeholder: "Type a message"}
