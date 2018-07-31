@@ -1,36 +1,27 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title ChatSpace
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    %div{class: "wrapper"}
-      %div{class: "notice"}
-        %p{class: "notice__sentense"}チャットグループが作成されました。
-      %div{class: "contents"}
-        %div{class: "left-content"}
-          %div{class: "my-account"}
-            %p{class: "my-account__name"} yosukenn
-            = link_to root_path, method: :get,class: "my-account__create" do
-              = fa_icon("edit")
-            = link_to root_path, method: :get,class: "my-account__edit" do
-              = fa_icon("cog")
-          = render partial: "group"
-        %div{class: "right-content"}
-          %div{class: "current-group"}
-            %p{class: "current-group__name"} group1
-            %p{class: "current-group__members"} Member : yosukenn, yasuda
-            %a{class: "current-group__edit", href: '/'}Edit
-          = render partial: "message"
-          %form{class: "message-send"}
-            %div{class: "message-send__content"}
-              %input{class: "message-send__content__text", type: "text", placeholder: "Type a message"}
-              %div{class: "message-send__content__img"}
-                %label
-                  %div{class: "message-send__content__img-icon"}
-                    = fa_icon("image")
-                  %input{class: "message-send__content__image", type: "file"}
-                %input{class: "message-send__content__btn", type: "submit", value: "Send"}
+%div{class: "wrapper"}
+  %div{class: "notice"}
+    %p{class: "notice__sentense"}チャットグループが作成されました。
+  %div{class: "contents"}
+    %div{class: "left-content"}
+      %div{class: "my-account"}
+        %p{class: "my-account__name"} yosukenn
+        = link_to root_path, method: :get,class: "my-account__create" do
+          = fa_icon("edit")
+        = link_to root_path, method: :get,class: "my-account__edit" do
+          = fa_icon("cog")
+      = render partial: "group"
+    %div{class: "right-content"}
+      %div{class: "current-group"}
+        %p{class: "current-group__name"} group1
+        %p{class: "current-group__members"} Member : yosukenn, yasuda
+        %a{class: "current-group__edit", href: '/'}Edit
+      = render partial: "message"
+      %form{class: "message-send"}
+        %div{class: "message-send__content"}
+          %input{class: "message-send__content__text", type: "text", placeholder: "Type a message"}
+          %div{class: "message-send__content__img"}
+            %label
+              %div{class: "message-send__content__img-icon"}
+                = fa_icon("image")
+              %input{class: "message-send__content__image", type: "file"}
+            %input{class: "message-send__content__btn", type: "submit", value: "Send"}
