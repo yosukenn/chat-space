@@ -10,18 +10,18 @@
         = link_to root_path, method: :get,class: "side-bar__my-account__edit" do
           = fa_icon("cog")
       = render partial: "group"
-    %div{class: "right-content"}
-      %div{class: "current-group"}
-        %p{class: "current-group__name"} group1
-        %p{class: "current-group__members"} Member : yosukenn, yasuda
-        %a{class: "current-group__edit", href: '/'}Edit
+    %div{class: "content"}
+      %div{class: "content__current-group"}
+        %p{class: "content__current-group__name"} group1
+        %p{class: "content__current-group__members"} Member : yosukenn, yasuda
+        %a{class: "content__current-group__edit", href: '/'}Edit
       = render partial: "message"
-      %form{class: "message-send"}
-        %div{class: "message-send__content"}
-          %input{class: "message-send__content__text", type: "text", placeholder: "Type a message"}
-          %div{class: "message-send__content__img"}
+      %form{class: "content__message-send"}
+        %div{class: "content__message-send__content"}
+          %input{class: "content__message-send__content__text", type: "text", placeholder: "Type a message"}
+          %div{class: "content__message-send__content__img"}
             %label
-              %div{class: "message-send__content__img-icon"}
+              %div{class: "content__message-send__content__img-icon"}
                 = fa_icon("image")
-              %input{class: "message-send__content__image", type: "file"}
-            %input{class: "message-send__content__btn", type: "submit", value: "Send"}
+              %input{class: "content__message-send__content__image", type: "file"}
+            %input{class: "content__message-send__content__btn", type: "submit", value: "Send"}
