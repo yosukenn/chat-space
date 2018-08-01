@@ -1,0 +1,7 @@
+.side-bar__my-account
+  %p.side-bar__my-account__name
+    = current_user.name
+  = link_to "#", method: :get, class: "side-bar__my-account__create" do
+    = fa_icon("edit")
+  = link_to edit_user_path(current_user), method: :get, class: "side-bar__my-account__edit" do
+    = fa_icon("cog")
