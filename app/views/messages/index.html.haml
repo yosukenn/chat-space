@@ -6,9 +6,6 @@
       = render partial: "my-account"
       = render partial: "group"
     .content
-      .content__current-group
-        %p.content__current-group__name group1
-        %p.content__current-group__members Member : yosukenn, yasuda
-        %a.content__current-group__edit{href: '#'}Edit
+      = render partial: "current-group"
       = render partial: "message"
       = render partial: "form"
