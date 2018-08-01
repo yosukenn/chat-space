@@ -1,4 +1,10 @@
-.notice, .alert {
+.notice {
+  background-color: $blue;
+  text-align: center;
+  color: $white;
+}
+
+.alert {
   background-color: $blue;
   text-align: center;
   color: $white;
