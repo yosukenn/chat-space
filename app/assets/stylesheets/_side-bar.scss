@@ -6,8 +6,9 @@
   &__my-account {
     background-color: #253141;
     width: 260px;
-    height: 95px;
-    padding: 28px 20px 0;
+    height: 98px;
+    padding: 0 20px 0;
+    position: relative;
     &__name {
       color: $white;
       font-size: 16px;
@@ -15,6 +16,10 @@
       float: left;
       line-height: 90px;
       padding-right: 130px;
+    }
+    &__icons {
+      position: absolute;
+      right: 20px;
     }
     &__create {
       float: left;
