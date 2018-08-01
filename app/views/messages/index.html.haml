@@ -3,12 +3,7 @@
     %p.notice__sentense チャットグループが作成されました。
   .contents
     .side-bar
-      .side-bar__my-account
-        %p.side-bar__my-account__name yosukenn
-        = link_to "#", method: :get, class: "side-bar__my-account__create" do
-          = fa_icon("edit")
-        = link_to "#", method: :get, class: "side-bar__my-account__edit" do
-          = fa_icon("cog")
+      = render partial: "my-account"
       = render partial: "group"
     .content
       .content__current-group
