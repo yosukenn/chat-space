@@ -1,10 +1,5 @@
-.notice {
-  position: fixed;
-  z-index: 5;
-  width: 100vw;
+.notice, .alert {
   background-color: $blue;
-  &__sentense {
-    text-align: center;
-    color: $white;
-  }
+  text-align: center;
+  color: $white;
 }
