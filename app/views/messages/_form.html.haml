@@ -1,9 +1,18 @@
-%form{class: "content__message-send"}
-  .content__message-send__content
-    %input{class: "content__message-send__content__text", type: "text", placeholder: "Type a message"}
-    .content__message-send__content__img
-      %label
-        .content__message-send__content__img-icon
+/ %form{class: "content__message-send"}
+/   .content__message-send__content
+/     %input{class: "content__message-send__content__text", type: "text", placeholder: "Type a message"}
+/     .content__message-send__content__img
+/       %label
+/         .content__message-send__content__img-icon
+/           = fa_icon("image")
+/         %input{class: "content__message-send__content__image", type: "file"}
+/         %input{class: "content__message-send__content__btn", type: "submit", value: "Send"}
+.content__message-send
+  = form_for [group, message] do |f|
+    .content__message-send__content
+      = f.text_field :body, class: 'content__message-send__content__text', placeholder: 'Type a message'
+      .content__message-send__content__img
+        = f.label :image, class: 'content__message-send__content__img-icon' do
           = fa_icon("image")
-        %input{class: "content__message-send__content__image", type: "file"}
-      %input{class: "content__message-send__content__btn", type: "submit", value: "Send"}
+          = f.file_field :image, class: 'content__message-send__content__image'
+        = f.submit class: 'content__message-send__content__btn', value: 'Send'

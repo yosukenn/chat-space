@@ -6,4 +6,4 @@
     .content
       = render partial: "current-group"
       = render partial: "message"
-      = render partial: "form"
+      = render partial: "form", locals: { message: @message, group: @group }
