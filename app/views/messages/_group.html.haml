@@ -1,6 +1,7 @@
 .side-bar__group
-  %p.side-bar__group__name group1
-  %p.side-bar__group__message こんにちは
-.side-bar__group
-  %p.side-bar__group__name group2
-  %p.side-bar__group__message こんばんは
+  - @groups.each do |group|
+    = link_to group_messages_path(group), class: 'side-bar__group__link' do
+      .side-bar__group__name
+        = group.name
+      .side-bar__group__message
+        メッセージはまだありません。
