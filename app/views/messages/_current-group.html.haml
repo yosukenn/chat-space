@@ -1,4 +1,8 @@
 .content__current-group
-  %p.content__current-group__name group1
-  %p.content__current-group__members Member : yosukenn, yasuda
+  %p.content__current-group__name= @group.name
+  %p.content__current-group__members
+    Member:
+    - @group.users.each do |user|
+      %span
+      = user.name
   = link_to "Edit", edit_group_path(@group), class: "content__current-group__edit"
