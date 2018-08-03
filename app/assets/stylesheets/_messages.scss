@@ -38,6 +38,7 @@
   &__message {
     padding: 0 40px 40px;
     &__name {
+      clear: both;
       padding-right: 10px;
       float: left;
       font-weight: bold;
@@ -55,6 +56,11 @@
       padding-top: 10px;
       font-size: 14px;
       color: $black;
+    }
+    &__image {
+      float: left;
+      max-width: 200px;
+      max-height: 100px;
     }
   }
   &__message-send {

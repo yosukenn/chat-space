@@ -4,4 +4,7 @@
       .side-bar__group__name
         = group.name
       .side-bar__group__message
-        メッセージはまだありません。
+        - if group.messages.empty?
+          メッセージはまだありません。
+        - else
+          = group.show_last_message
