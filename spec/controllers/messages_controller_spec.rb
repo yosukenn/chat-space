@@ -83,6 +83,11 @@ describe MessagesController, type: :controller do
       before do
         post :create, params: params
       end
+
+      it 'redirects to new_user_session_path' do
+        post :create, params: params
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
   end
 end
