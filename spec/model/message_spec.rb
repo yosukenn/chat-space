@@ -12,6 +12,10 @@ describe Message do
       expect(message).to be_valid
     end
 
+    it "is valid with a body" do
+      message = build(:message, image: nil)
+      expect(message).to be_valid
+    end
 
   end
 end
