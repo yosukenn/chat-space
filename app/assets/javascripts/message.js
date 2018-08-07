@@ -40,8 +40,7 @@ $(function() {
       $('.new_message')[0].reset();
       $('.content__message-send__content__btn').removeAttr('disabled');
       // 一番下までスクロールする
-      var content = $('.content')
-      scrollBottom(content)
+      scrollBottom($('.content'))
     })
     .fail(function(data) {
       alert('通信に失敗しました。');
