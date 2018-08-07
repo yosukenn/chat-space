@@ -1,6 +1,10 @@
 $(function() {
 
 function buildHTML(message) {
+  var insertImage = ''
+  if (message.image.url) {
+    insertImage = `<img class="content__message__image" src="${message.image.url}">`
+  }
   var html = `<div class="content__message__name">
                 ${message.user_name}
                   </div>
@@ -9,7 +13,8 @@ function buildHTML(message) {
                   </p>
               <p class="content__message__text">
                 ${message.body}
-                </p>`
+                </p>
+              ${insertImage}`
   return html;
 }
 
@@ -28,7 +33,8 @@ function buildHTML(message) {
     .done(function(data) {
       var html = buildHTML(data);
       $('.content__message').append(html);
-      $('.content__message-send__content__text').val();
+      $('.content__message-send__content__text').val('');
+      $('.content__message-send__content__btn').removeAttr('disabled');
     })
 
 
