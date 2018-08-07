@@ -15,4 +15,4 @@
         = f.label :image, class: 'content__message-send__content__img-icon' do
           = fa_icon("image")
           = f.file_field :image, class: 'content__message-send__content__image'
-        = f.submit class: 'content__message-send__content__btn', value: 'Send'
+        = f.submit class: 'content__message-send__content__btn', value: 'Send', data: { disable_with: "Send" }
