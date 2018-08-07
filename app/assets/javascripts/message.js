@@ -35,8 +35,12 @@ function buildHTML(message) {
       $('.content__message').append(html);
       $('.content__message-send__content__text').val('');
       $('.content__message-send__content__btn').removeAttr('disabled');
+      // 一番下までスクロールする
+      $('.content').animate({scrollTop: $('.content')[0].scrollHeight}, 'fast');
     })
-
+    fail(fuction(data) {
+      alert('通信に失敗しました。');
+    })
 
 
   })
