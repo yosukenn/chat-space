@@ -1,22 +1,26 @@
 $(function() {
 
-function buildHTML(message) {
-  var insertImage = ''
-  if (message.image.url) {
-    insertImage = `<img class="content__message__image" src="${message.image.url}">`
-  }
-  var html = `<div class="content__message__name">
-                ${message.user_name}
-                  </div>
-              <p class="content__message__date">
-                ${message.created_at}
+  function buildHTML(message) {
+    var insertImage = ''
+    if (message.image.url) {
+      insertImage = `<img class="content__message__image" src="${message.image.url}">`
+    }
+    var html = `<div class="content__message__name">
+                  ${message.user_name}
+                    </div>
+                <p class="content__message__date">
+                  ${message.created_at}
+                    </p>
+                <p class="content__message__text">
+                  ${message.body}
                   </p>
-              <p class="content__message__text">
-                ${message.body}
-                </p>
-              ${insertImage}`
-  return html;
-}
+                ${insertImage}`
+    return html;
+  }
+
+  function scrollBottom(content) {
+    content.animate({scrollTop: content[0].scrollHeight}, 'fast');
+  }
 
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
@@ -33,10 +37,11 @@ function buildHTML(message) {
     .done(function(data) {
       var html = buildHTML(data);
       $('.content__message').append(html);
-      $('.content__message-send__content__text').val('');
+      $('.new_message')[0].reset();
       $('.content__message-send__content__btn').removeAttr('disabled');
       // 一番下までスクロールする
-      $('.content').animate({scrollTop: $('.content')[0].scrollHeight}, 'fast');
+      var content = $('.content')
+      scrollBottom(content)
     })
     .fail(function(data) {
       alert('通信に失敗しました。');
