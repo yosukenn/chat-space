@@ -38,7 +38,7 @@ function buildHTML(message) {
       // 一番下までスクロールする
       $('.content').animate({scrollTop: $('.content')[0].scrollHeight}, 'fast');
     })
-    fail(fuction(data) {
+    .fail(function(data) {
       alert('通信に失敗しました。');
     })
 
