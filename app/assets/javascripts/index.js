@@ -1,5 +1,7 @@
 $(function() {
 
+  var preInput;
+
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.name}</p>
@@ -33,6 +35,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
+      if (input !== preInput) {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
@@ -40,6 +43,8 @@ $(function() {
         });
       } else {
         appendNoUser("一致するユーザーはいません。")
+      }
+      preInput = input;
       }
     })
     .fail(function() {
