@@ -39,6 +39,7 @@ $(function() {
   });
 
   $('.user-search-result').on('click', '.user-search-add', function() {
+    $(this).parent().remove();
 
 
   })
