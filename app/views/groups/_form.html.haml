@@ -27,10 +27,12 @@
       /   = user.label {user.check_box + user.text}
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       #chat-group-users
-        .chat-group-user.clearfix#chat-group-user-22
-          = f.hidden_field :user_ids, value: '22'
-          %p.chat-group-user__name
-          seo_kyohei
+        - group.users.each do |user|
+          .chat-group-user.clearfix#chat-group-user-22
+            = f.fields_for user do |u|
+              = u.hidden_field :user_ids, name:"group[user_ids][]", value: user.id
+              %p.chat-group-user__name
+              = user.name
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
