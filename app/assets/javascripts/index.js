@@ -35,7 +35,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      if (input !== preInput) {
+      if (input !== preInput && input.length !== 0) {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
