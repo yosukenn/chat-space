@@ -17,14 +17,12 @@ $(function() {
 
   $('.chat-group-form__input').on('keyup', function() {
     var input = $(this).val();
-
     $.ajax({
       type: 'GET',
       url: '/users',
       data: { keyword: input },
       dataType: 'json'
     })
-
     .done(function(users) {
       $('.user-search-result').empty();
       if (users.length !== 0) {
@@ -35,11 +33,16 @@ $(function() {
         appendNoUser("一致するユーザーはいません。")
       }
     })
-
     .fail(function() {
       alert('通信に失敗しました。')
     })
-
-
   });
+
+  $('.user-search-result').on('click', '.user-search-add', function() {
+
+
+  })
+
+
+
 });
