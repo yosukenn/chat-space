@@ -5,14 +5,14 @@ $(function() {
                   <p class="chat-group-user__name">${user.name}</p>
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</a>
                 </div>`
-    $('.user-search-result').append(html);
+    $('#user-search-result').append(html);
   }
 
   function appendNoUser(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user}</p>
                 </div>`
-    $('.user-search-result').append(html);
+    $('#user-search-result').append(html);
   }
 
   function appendMember(id, name) {
@@ -33,7 +33,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      $('.user-search-result').empty();
+      $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
           appendUser(user);
@@ -47,7 +47,7 @@ $(function() {
     })
   });
 
-  $('.user-search-result').on('click', '.user-search-add', function() {
+  $('#user-search-result').on('click', '.user-search-add', function() {
     $(this).parent().remove();
     // 選択されたユーザー情報を取得する
     var id = $(this).attr('data-user-id');
