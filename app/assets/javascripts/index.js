@@ -56,6 +56,7 @@ $(function() {
     appendMember(id, name);
   })
 
-
-
+  $('#chat-group-users').on('click', '.chat-group-user__btn', function() {
+    $(this).parent().remove();
+  })
 });
