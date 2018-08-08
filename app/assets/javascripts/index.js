@@ -56,7 +56,6 @@ $(function() {
     $(this).parent().remove();
     // 選択されたユーザー情報を取得する
     var user = $(this).data();
-    console.log(user);
     // HTMLを追加する関数に渡す
     appendMember(user);
   })
