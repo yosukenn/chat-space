@@ -15,10 +15,10 @@ $(function() {
     $('#user-search-result').append(html);
   }
 
-  function appendMember(id, name) {
+  function appendMember(user) {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                  <input name='group[user_ids][]' type='hidden' value=${id}>
-                  <p class='chat-group-user__name'>${name}</p>
+                  <input name='group[user_ids][]' type='hidden' value=${user.userId}>
+                  <p class='chat-group-user__name'>${user.userName}</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                   </div>`
     $('#chat-group-users').append(html);
@@ -50,10 +50,10 @@ $(function() {
   $('#user-search-result').on('click', '.user-search-add', function() {
     $(this).parent().remove();
     // 選択されたユーザー情報を取得する
-    var id = $(this).attr('data-user-id');
-    var name = $(this).attr('data-user-name');
+    var user = $(this).data();
+    console.log(user);
     // HTMLを追加する関数に渡す
-    appendMember(id, name);
+    appendMember(user);
   })
 
   $('#chat-group-users').on('click', '.chat-group-user__btn', function() {
