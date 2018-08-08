@@ -28,6 +28,7 @@ $(function() {
 
   $('#user-search-field').on('keyup', function() {
     var input = $(this).val();
+    if (input !== preInput && input.length !== 0) {
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -35,7 +36,6 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      if (input !== preInput && input.length !== 0) {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
@@ -45,11 +45,13 @@ $(function() {
         appendNoUser("一致するユーザーはいません。")
       }
       preInput = input;
-      }
     })
     .fail(function() {
       alert('通信に失敗しました。')
     })
+    } else if (input.length === 0) {
+      $('#user-search-result').remove();
+    }
   });
 
   $('#user-search-result').on('click', '.user-search-add', function() {
