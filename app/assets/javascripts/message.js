@@ -5,7 +5,8 @@ $(function() {
     if (message.image.url) {
       insertImage = `<img class="content__message__image" src="${message.image.url}">`
     }
-    var html = `<div class="content__message__name">
+    var html = `<div class="content__message__block" data-id="${message.id}">
+                <div class="content__message__name">
                   ${message.user_name}
                     </div>
                 <p class="content__message__date">
@@ -50,19 +51,28 @@ $(function() {
   // 'messages'を含むURLの場合に処理を行う
   $(window).on('load', function() {
     if(document.URL.match('messages')) {
-      // 5秒に一回、非同期でリクエストを送信し、dataの内容をHTMLとして追加する処理
+      // 5秒に一回、非同期でリクエストを送信し、dataの内容をHTMLとして追加する
       setInterval(function() {
         var url = $('#new_message').attr('action');
+        var latest_id = $('.content__message__block:last').data('id');
         $.ajax({
           url: url,
           type: 'GET',
-          dataType: 'json'
+          dataType: 'json',
+          data: {
+            'id': latest_id
+          }
         })
-
+        .done(function(data) {
+            data.forEach(function(message) {
+              var html = buildHTML(message);
+              $('.content__message').append(html);
+            });
+        })
+        .fail(function(data) {
+          alert('通信に失敗しました。')
+        })
       }, 5000);
     }
   });
-
-
-
 })
