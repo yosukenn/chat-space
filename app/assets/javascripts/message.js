@@ -47,9 +47,17 @@ $(function() {
     })
   })
 
-  // 5秒に一回、非同期でリクエストを送信し、dataの内容をHTMLとして追加する処理
-  setInterval(function() {
-  }, 5000);
+  // 'messages'を含むURLの場合に処理を行う
+  $(window).on('load', function() {
+    if(document.URL.match('messages')) {
+      // 5秒に一回、非同期でリクエストを送信し、dataの内容をHTMLとして追加する処理
+      setInterval(function() {
+      }, 5000);
+
+
+    }
+  });
+
 
 
 })
