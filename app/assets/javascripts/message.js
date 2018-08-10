@@ -55,23 +55,26 @@ $(function() {
       setInterval(function() {
         var url = $('#new_message').attr('action');
         var latest_id = $('.content__message__block:last').data('id');
-        $.ajax({
-          url: url,
-          type: 'GET',
-          dataType: 'json',
-          data: {
-            'id': latest_id
-          }
-        })
-        .done(function(data) {
+        if (latest_id) {
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            data: {
+              'id': latest_id
+            }
+          })
+          .done(function(data) {
             data.forEach(function(message) {
               var html = buildHTML(message);
               $('.content__message').append(html);
             });
-        })
-        .fail(function(data) {
-          alert('通信に失敗しました。')
-        })
+            scrollBottom($('.content'));
+          })
+          .fail(function(data) {
+            alert('通信に失敗しました。')
+          })
+        }
       }, 5000);
     }
   });
