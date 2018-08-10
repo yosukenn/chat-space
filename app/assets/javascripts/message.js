@@ -51,6 +51,7 @@ $(function() {
   // 'messages'を含むURLの場合に処理を行う
   $(window).on('load', function() {
     if(document.URL.match('messages')) {
+      scrollBottom($('.content'));
       // 5秒に一回、非同期でリクエストを送信し、dataの内容をHTMLとして追加する
       setInterval(function() {
         var url = $('#new_message').attr('action');
