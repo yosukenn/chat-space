@@ -79,4 +79,11 @@ $(function() {
       }, 5000);
     }
   });
+
+  //ユーザーがスクロールしたら.noticeを消す
+  $(window).on('scroll', function() {
+    if (document.URL.match('messages') && $('.notice')) {
+      $('.notice').remove();
+    }
+  })
 })

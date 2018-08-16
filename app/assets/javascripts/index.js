@@ -50,7 +50,7 @@ $(function() {
       alert('通信に失敗しました。')
     })
     } else if (input.length === 0) {
-      $('#user-search-result').remove();
+      $('#user-search-result').text('');
     }
   });
 
