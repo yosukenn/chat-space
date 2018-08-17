@@ -2,6 +2,6 @@
   - @messages.each do |message|
     .content__message__block{data: {id: message.id}}
       .content__message__name= message.user.name
-      %p.content__message__date= format_posted_time(message.created_at)
+      %p.content__message__date= message.created_at.to_s(:sent_on)
       %p.content__message__text= message.body
       = image_tag message.image.url, class: 'content__message__image' if message.image.present?
