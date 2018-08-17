@@ -26,7 +26,7 @@ $(function() {
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: 'POST',
@@ -36,6 +36,10 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
+      if (data.length == 0) {
+        $('.content__message-send__content__btn').removeAttr('disabled');
+        return false;
+      }
       var html = buildHTML(data);
       $('.content__message').append(html);
       $('.new_message')[0].reset();
